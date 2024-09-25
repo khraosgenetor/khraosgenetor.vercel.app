@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "KhraosGenetor",
+  title: "KhraosGenetor | Home",
   description: "Website for KhraosGenetor",
 };
 
