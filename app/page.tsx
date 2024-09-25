@@ -23,16 +23,17 @@ export default function Home() {
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
             <div className="flex justify-center items-center w-full">
             <Image
-            className="dark"
-            src="/personal/pfp.png"
-            alt="Next.js logo"
-            width={180}
-            height={38}
-            priority
+                className="dark"
+                src="/personal/pfp.png"
+                alt="Next.js logo"
+                width={180}
+                height={38}
+                priority
             />
             </div>
-            <div className="flex justify-center items-center w-full">
-                Welcome to my website. My name, is Khraos Genetor
+            <div className="flex justify-center items-center w-full text-center">
+                Welcome to my website. My name, is Khraos Genetor.<br></br>
+                Hope you have a good day here.
             </div>
 
             <div className="flex justify-center items-center w-full gap-2">

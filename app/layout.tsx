@@ -3,14 +3,14 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-sans",
-  weight: "100 900",
+  weight: "100 100",
 });
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  weight: "100 900",
+  weight: "100 100",
 });
 
 export const metadata: Metadata = {
