@@ -19,7 +19,7 @@ type Post = {
 const posts: Record<string, Post> = {
   "1": {
     title: "Hello World!",
-    date: "27-10-2024",
+    date: "28-10-2024",
     description:
       "My first post, with an introduction of me. Also explains what the blog will be used for.",
     imageUrl: "/blog-icons/1.jpg",

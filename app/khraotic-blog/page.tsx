@@ -15,7 +15,7 @@ const posts: Post[] = [
   {
     id: "1",
     title: "1. Hello World!",
-    date: "27-10-2024",
+    date: "28-10-2024",
     description:
       "This is the first post where we explore the basics of Next.js and its features.",
     imageUrl: "/blog-icons/1.jpg",
