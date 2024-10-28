@@ -34,7 +34,7 @@ export default function BlogIndex() {
             {posts.map((post) => (
               <Link
                 key={post.id}
-                href={`/blogs/${post.id}`}
+                href={`/khraotic-blog/${post.id}`}
                 className="flex items-start w-full sm:w-1/2 lg:w-1/3 p-4 bg-gray-900 bg-opacity-70 border border-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200"
               >
                 <img
