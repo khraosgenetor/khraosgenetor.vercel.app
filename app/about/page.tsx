@@ -2,6 +2,7 @@ import Image from "next/image";
 import RootLayout from "../layout";
 import Header from "../RefTSX/Header";
 import Footer from "../RefTSX/Footer";
+import Contact from "../RefTSX/Contact";
 
 export const metadata = {
   title: "KhraosGenetor | About Me",
