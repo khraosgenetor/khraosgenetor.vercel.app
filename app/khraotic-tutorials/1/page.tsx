@@ -1,12 +1,12 @@
+import RootLayout from "@/app/layout";
+import Footer from "@/app/RefTSX/Footer";
+import Header from "@/app/RefTSX/Header";
+import Image from "next/image";
 import Link from "next/link";
-import RootLayout from "../layout";
-import Header from "../RefTSX/Header";
-import Footer from "../RefTSX/Footer";
 
 export const metadata = {
-  title: "Khraotic Blog | Home",
-  description:
-    "Khraotic Blog's Home'",
+  title: "Khraotic Tutorial | 'Dev Setup'",
+  description: "Setting up the dev environment for Arch Linux.",
 };
 
 type Post = {
@@ -19,19 +19,10 @@ type Post = {
 
 const posts: Post[] = [
   {
-    id: "0",
-    title: "0. Hello World!",
-    date: "28-10-2024",
-    description:
-      "My first post, with an introduction of me. Also explains what the blog will be used for.",
-    imageUrl: "/icons/blog-icons/0.jpg",
-  },
-  {
     id: "1",
     title: "1. Setting up a developer machine.",
     date: "29-10-2024",
-    description:
-      "The first post of the Series 'Dev Setup: Linux 101'",
+    description: "The first post of the Series 'Dev Setup: Linux 101'",
     imageUrl: "/icons/blog-icons/1.jpeg",
   },
 ];
@@ -42,8 +33,26 @@ export default function BlogIndex() {
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-black text-white">
         <Header />
 
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
-          <h1 className="text-3xl font-bold text-center">Blog Posts</h1>
+        <main className="flex flex-col gap-8 row-start-2 items-center text-center sm:items-start w-full">
+          <div className="flex justify-center items-center w-full gap-8 sm:flex-row flex-col">
+            <div className="flex justify-center items-center w-full text-center">
+              <article className="max-w-2xl text-center">
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src="/icons/tutorial-icons/1.jpeg"
+                    alt="Dev Setup Tutorials"
+                    className="w-32 h-auto rounded-lg"
+                    width={128}
+                    height={128}
+                  />
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <h1 className="text-3xl font-bold text-center">
+            Dev Setup Tutorials
+          </h1>
           <div className="flex flex-col w-full gap-6 sm:flex-row sm:flex-wrap">
             {posts.map((post) => (
               <Link
