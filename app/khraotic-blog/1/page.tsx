@@ -114,7 +114,7 @@ export default function BlogPost() {
                   </p>
                 </div>
                 <div className="mt-4 text-base text-gray-200 text-left">
-                  <p>It is to be noted that I will start the series tomorrow, aka <strong>the 30th of October, IST</strong>.</p>
+                  <p>It is to be noted that I will start the series day after tomorrow, aka <strong>the 31st of October, IST</strong>.</p>
                 </div>
               </article>
             </div>
