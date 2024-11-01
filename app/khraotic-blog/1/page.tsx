@@ -114,7 +114,8 @@ export default function BlogPost() {
                   </p>
                 </div>
                 <div className="mt-4 text-base text-gray-200 text-left">
-                  <p>It is to be noted that I will start the series day after tomorrow, aka <strong>the 31st of October, IST</strong>.</p>
+                  <p>It is to be noted that the blog will not resume until <strong>the 5th of November, IST</strong></p>
+                  <p>as I have to complete my projects and lab manuals, and I will be busy.</p>
                 </div>
               </article>
             </div>
