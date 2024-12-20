@@ -31,7 +31,7 @@ const posts: Post[] = [
     title: "1. Setting up a developer machine.",
     date: "29-10-2024",
     description:
-      "The first post of the Series 'Dev Setup: Linux 101'",
+      "The first post of the Series 'Dev Setup: Linux 101",
     imageUrl: "/icons/blog-icons/1.jpeg",
   },
 ];

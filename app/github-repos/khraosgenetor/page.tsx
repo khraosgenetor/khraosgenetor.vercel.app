@@ -1,4 +1,4 @@
-// page.tsx
+// not-found.tsx
 import Footer from "@/app/RefTSX/Footer";
 import Header from "@/app/RefTSX/Header";
 import RootLayout from "@/app/layout";
