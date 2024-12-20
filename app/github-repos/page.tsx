@@ -38,6 +38,13 @@ export default function GitHub() {
       page: "SolutionsForClass10APC_CTA_TB_For_ICSE",
       image: "/svgs/svgrepo-comp.svg",
     },
+    {
+      name: "ProgrammingNotes",
+      description: "Notes for programming",
+      link: "https://github.com/khraosgenetor/ProgrammingNotes",
+      page: "ProgrammingNotes",
+      image: "/svgs/obsidian-icon.svg",
+    },
 
     // Add more repositories as needed
   ];
