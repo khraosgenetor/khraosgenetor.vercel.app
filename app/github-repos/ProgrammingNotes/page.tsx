@@ -56,7 +56,7 @@ export default function ProgrammingNotes() {
                             </a>
                         </h1>
                     </div>
-                    <p className="text-gray-400 text-center">
+                    <p className="text-white text-center">
                         All the notes I refer to for my programming journey.
                     </p>
 
