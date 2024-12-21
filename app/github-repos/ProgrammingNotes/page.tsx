@@ -2,7 +2,7 @@ import Footer from "@/app/RefTSX/Footer";
 import Header from "@/app/RefTSX/Header";
 import RootLayout from "@/app/layout";
 import Image from "next/image";
-import CopyCode from "../../RefTSX/CopyCode"; // Import the client component
+import CopyCode from "../../RefTSX/apis/CopyCode"; // Import the client component
 
 export const metadata = {
     title: "KhraosGenetor | GH/ProgrammingNotes",

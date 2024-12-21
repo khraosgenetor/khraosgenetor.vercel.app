@@ -1,13 +1,9 @@
-import RootLayout from "@/app/layout";
+"use client";
+
 import Footer from "@/app/RefTSX/Footer";
 import Header from "@/app/RefTSX/Header";
 import Image from "next/image";
-
-export const metadata = {
-  title: "Khraotic Blog | 'Setting up a developer machine'",
-  description:
-    "The Dev Series",
-};
+import {useEffect} from "react";
 
 type Post = {
   title: string;
@@ -27,12 +23,15 @@ const posts: Record<string, Post> = {
 };
 
 export default function BlogPost() {
+  useEffect(() => {
+    document.title = "KB | 1. Setting up a developer Machine"; // Dynamically set title
+  }, []);
+
   const post = posts["1"];
 
   if (!post) return <p>Post not found</p>;
 
   return (
-    <RootLayout>
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
         <Header />
 
@@ -124,6 +123,5 @@ export default function BlogPost() {
 
         <Footer />
       </div>
-    </RootLayout>
   );
 }
