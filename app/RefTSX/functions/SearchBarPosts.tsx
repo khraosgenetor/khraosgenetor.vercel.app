@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,6 +20,7 @@ interface SearchBarProps {
 
 export default function SearchBarPosts({ placeholder, posts, path }: SearchBarProps) {
     const [query, setQuery] = useState("");
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const filteredPosts = posts.filter(
         (post) =>
@@ -27,10 +28,27 @@ export default function SearchBarPosts({ placeholder, posts, path }: SearchBarPr
             post.description.toLowerCase().includes(query.toLowerCase())
     );
 
+    useEffect(() => {
+        // Listen for Ctrl + F keypress to focus the search input
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.ctrlKey && event.key === "f") {
+                event.preventDefault();
+                inputRef.current?.focus(); // Focus on the input when Ctrl + F is pressed
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []);
+
     return (
         <div className="flex flex-col items-center w-full">
             <div className="flex items-center w-full max-w-md gap-2 p-2 bg-gray-800 rounded-lg mb-8">
                 <input
+                    ref={inputRef}
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
