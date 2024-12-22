@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@vercel/speed-insights": "^1.0.14",
     "fs": "^0.0.1-security",
     "fuse.js": "^7.0.0",

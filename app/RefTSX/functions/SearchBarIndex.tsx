@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Fuse from 'fuse.js';
+import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/outline'; // Import the search icon from @heroicons/react
 
 type Page = {
     title: string;
@@ -42,14 +43,16 @@ const SearchBarIndex = () => {
     };
 
     return (
-        <div>
+        <div className="relative">
+            <MagnifyingGlassCircleIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#808080] w-7 h-7" /> {/* Position the search icon inside */}
             <input
                 type="text"
                 value={query}
                 onChange={handleSearch}
-                placeholder="Search..."
-                className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-[#1b1b1b] text-[#f5f5f5] gap-2 hover:bg-[#555555] dark:hover:bg-[#121212] hover:text-gray-500 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+                placeholder="       Search..."
+                className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-[#1b1b1b] text-[#f5f5f5] gap-2 hover:bg-[#555555] dark:hover:bg-[#121212] hover:text-gray-500 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 pl-10" // Added padding-left for the icon
             />
+
             {query && (
                 <ul>
                     {results.map((result) => (
