@@ -3,7 +3,7 @@
 import Footer from "@/app/RefTSX/Footer";
 import Header from "@/app/RefTSX/Header";
 import {useEffect} from "react";
-import SearchBarPosts from "@/app/RefTSX/apis/SearchBarPosts";
+import SearchBarPosts from "@/app/RefTSX/functions/SearchBarPosts";
 import { usePathname } from "next/navigation";
 
 type Post = {

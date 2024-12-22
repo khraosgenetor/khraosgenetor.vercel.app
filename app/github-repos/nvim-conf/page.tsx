@@ -10,17 +10,25 @@ export const metadata = {
     description: "GH Repo: ProgrammingNotes",
 };
 
-export default function ProgrammingNotes() {
-    const sshCodeSnippet = dedent(`
-        git clone git@github.com:khraosgenetor/ProgrammingNotes.git
-        cd ProgrammingNotes
-        obsidian ./
+export default function nvim_conf() {
+    const sshCodeSnippetUnix = dedent(`
+        git clone git@github.com:khraosgenetor/nvim-conf ~/.config/nvim
+        nvim
     `);
 
-    const httpsCodeSnippet = dedent(`
-        git clone https://github.com/khraosgenetor/ProgrammingNotes.git
-        cd ProgrammingNotes
-        obsidian ./
+    const httpsCodeSnippetUnix = dedent(`
+        git clone https://github.com/khraosgenetor/nvim-conf ~/.config/nvim
+        nvim
+    `);
+
+    const sshCodeSnippetWin = dedent(`
+        git clone git@github.com:khraosgenetor/nvim-conf ~\\AppData\\Local
+        nvim
+    `);
+
+    const httpsCodeSnippetWin = dedent(`
+        git clone https://github.com/khraosgenetor/nvim-conf ~\\AppData\\Local
+        nvim
     `);
 
 
@@ -32,11 +40,11 @@ export default function ProgrammingNotes() {
                 <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
                     <div className="flex items-center gap-4">
                         <Image
-                            src="/svgs/obsidian-icon.svg" // Update with your profile image path
-                            alt="Obsidian Logo for Notes"
+                            src="/svgs/svgrepo-nvim.svg" // Update with your profile image path
+                            alt="NeoVim Logo for IDE"
                             width={100}
                             height={100}
-                            className="rounded-full"
+                            className="bg-gray-700 rounded-full"
                         />
                         <h1 className="text-2xl font-bold text-white">
                             <a
@@ -44,22 +52,32 @@ export default function ProgrammingNotes() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                ProgrammingNotes
+                                nvim-conf
                             </a>
                         </h1>
                     </div>
                     <p className="text-white text-center">
-                        All the notes I refer to for my programming journey.
+                        IDE I use for development on my Arch machine
                     </p>
 
+                    <h1>For OSX and Linux:</h1>
+
                     <h3>If you use SSH Git (recommended), then:</h3>
-                    <CopyCode code={sshCodeSnippet} language={"bash"} />
+                    <CopyCode code={sshCodeSnippetUnix} language={"bash"}/>
 
                     <h3>Otherwise, use HTTPS:</h3>
-                    <CopyCode code={httpsCodeSnippet} language={"bash"} />
+                    <CopyCode code={httpsCodeSnippetUnix} language={"bash"}/>
+
+                    <h1>For Windows:</h1>
+
+                    <h3>If you use SSH Git (recommended), then:</h3>
+                    <CopyCode code={sshCodeSnippetWin} language={"bash"}/>
+
+                    <h3>Otherwise, use HTTPS:</h3>
+                    <CopyCode code={httpsCodeSnippetWin} language={"bash"}/>
                 </main>
 
-                <Footer />
+                <Footer/>
             </div>
         </RootLayout>
     );

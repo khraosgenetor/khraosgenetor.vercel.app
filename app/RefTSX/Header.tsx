@@ -1,5 +1,5 @@
 // components/Header.tsx
-import SearchBarIndex from './apis/SearchBarIndex';
+import SearchBarIndex from './functions/SearchBarIndex';
 
 export default function Header() {
     return (

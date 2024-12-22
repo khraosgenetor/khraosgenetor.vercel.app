@@ -2,7 +2,7 @@
 
 import Header from "../RefTSX/Header";
 import Footer from "../RefTSX/Footer";
-import SearchBarPosts from "../RefTSX/apis/SearchBarPosts";
+import SearchBarPosts from "../RefTSX/functions/SearchBarPosts";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
 

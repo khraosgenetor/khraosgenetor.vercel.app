@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-    --background: black;
-    --foreground: white;
+  --background: black;
+  --foreground: white;
+  --heading-font: 'Roboto', sans-serif; /* Define the custom property for heading font */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,24 +28,38 @@ body {
 }
 
 html, body {
-    scrollbar-width: thin !important;
-    scrollbar-color: #888 #f1f1f1 !important;
-  }
+  scrollbar-width: thin !important;
+  scrollbar-color: #888 #f1f1f1 !important;
+}
 
-  ::-webkit-scrollbar {
-    width: 0.5px !important;
-    height: 0.5px !important;
-  }
+::-webkit-scrollbar {
+  width: 0.5px !important;
+  height: 0.5px !important;
+}
 
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: #888 !important;
-    border-radius: 10px !important;
-  }
+::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 10px !important;
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555 !important;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font), sans-serif;
+  color: #fff; /* Adjust the color as needed */
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
