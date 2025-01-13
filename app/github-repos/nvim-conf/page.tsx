@@ -4,7 +4,7 @@ import RootLayout from "@/app/layout";
 import Image from "next/image";
 import CopyCode from "../../RefTSX/functions/CopyCode";
 import dedent from "@/app/RefTSX/functions/dedent";
-import Background from "@/app/RefTSX/Background"; // Import the client component
+
 
 export const metadata = {
     title: "KhraosGenetor | GH/ProgrammingNotes",
@@ -33,21 +33,25 @@ export default function nvim_conf() {
     `);
 
     return (
-        <RootLayout>
+        (<RootLayout>
             <div className="relative min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-                <Background className="absolute inset-0 z-0" /> {/* Ensure full coverage */}
+
 
                 <Header className="z-10" />
 
                 <main className="flex flex-col gap-8 items-center sm:items-start z-10">
                     <div className="flex items-center gap-4">
                         <Image
-                            src="/svgs/svgrepo-nvim.svg" // Update with your profile image path
+                            // Update with your profile image path
+                            src="/svgs/svgrepo-nvim.svg"
                             alt="NeoVim Logo for IDE"
                             width={100}
                             height={100}
                             className="bg-gray-700 rounded-full"
-                        />
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                         <h1 className="text-2xl font-bold text-white">
                             <a
                                 href="https://github.com/khraosgenetor/ProgrammingNotes"
@@ -81,6 +85,6 @@ export default function nvim_conf() {
                 <br />
                 <Footer className="z-10" />
             </div>
-        </RootLayout>
+        </RootLayout>)
     );
 }

@@ -2,7 +2,7 @@ import Footer from "@/app/RefTSX/Footer";
 import Header from "@/app/RefTSX/Header";
 import RootLayout from "@/app/layout";
 import Image from "next/image";
-import Background from "@/app/RefTSX/Background";
+
 
 export const metadata = {
   title: "KhraosGenetor | GH/khraosgenetor",
@@ -11,20 +11,24 @@ export const metadata = {
 
 export default function KhraosGenetor() {
   return (
-    <RootLayout>
+    (<RootLayout>
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
         <Header className={"z-10"}/>
-        <Background className={"z-0"} />
+
 
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10">
           <div className="flex items-center gap-4">
             <Image
-              src="/personal/pfp.png" // Update with your profile image path
+              // Update with your profile image path
+              src="/personal/pfp.png"
               alt="Profile Picture"
               width={100}
               height={100}
               className="rounded-full"
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             <h1 className="text-2xl font-bold text-white">
               <a
                 href="https://github.com/khraosgenetor/khraosgenetor"
@@ -44,6 +48,6 @@ export default function KhraosGenetor() {
 
         <Footer className={"z-10"}/>
       </div>
-    </RootLayout>
-);
+    </RootLayout>)
+  );
 }

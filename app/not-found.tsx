@@ -2,7 +2,7 @@
 
 import Header from "./RefTSX/Header";
 import Footer from "./RefTSX/Footer";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {usePathname} from "next/navigation";
 import { useEffect } from "react";
 

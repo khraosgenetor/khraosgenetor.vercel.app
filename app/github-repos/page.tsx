@@ -2,7 +2,7 @@ import Image from "next/image";
 import RootLayout from "../layout";
 import Header from "../RefTSX/Header";
 import Footer from "../RefTSX/Footer";
-import Background from "@/app/RefTSX/Background";
+
 
 export const metadata = {
   title: "KhraosGenetor | GitHub Repositories",
@@ -16,7 +16,7 @@ export default function GitHub() {
       description: "The GitHub README for my profile.",
       link: "https://github.com/khraosgenetor/khraosgenetor",
       page: "khraosgenetor",
-      image: "/personal/ghpfp.jpg",
+      image: "/personal/pfp.png",
     },
     {
       name: "khraosgenetor.vercel.app",
@@ -51,50 +51,53 @@ export default function GitHub() {
   ];
 
   return (
-      <RootLayout>
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-          <Header className="z-10"/>
-          <Background className="z-0" />
+    (<RootLayout>
+      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+        <Header className="z-10"/>
 
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10">
-            <div className="flex flex-wrap justify-center gap-8">
-              {repos.map((repo, index) => (
-                  <div
-                      key={index}
-                      className="flex flex-col items-center text-center p-3 bg-[#1b1b1b] bg-opacity-80 rounded-lg shadow-lg" // Use bg-opacity instead of opacity
+
+        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10">
+          <div className="flex flex-wrap justify-center gap-8">
+            {repos.map((repo, index) => (
+                <div
+                    key={index}
+                    className="flex flex-col items-center text-center p-3 bg-[#1b1b1b] bg-opacity-80 rounded-lg shadow-lg" // Use bg-opacity instead of opacity
+                >
+                  {repo.image && (
+                      <Image
+                        src={repo.image}
+                        alt={`${repo.name} icon`}
+                        width={100}
+                        height={100}
+                        className="rounded-full"
+                        style={{
+                          maxWidth: "100%",
+                          height: "auto"
+                        }} />
+                  )}
+                  <a
+                      href={`/github-repos/${repo.page}`}
+                      rel="noopener noreferrer"
+                      className="text-lg font-semibold text-white hover:text-blue-500"
                   >
-                    {repo.image && (
-                        <Image
-                            src={repo.image}
-                            alt={`${repo.name} icon`}
-                            width={100}
-                            height={100}
-                            className="rounded-full"
-                        />
-                    )}
-                    <a
-                        href={`/github-repos/${repo.page}`}
-                        rel="noopener noreferrer"
-                        className="text-lg font-semibold text-white hover:text-blue-500"
-                    >
-                      {repo.name}
-                    </a>
-                    <p className="text-gray-400">{repo.description}</p>
-                    <a
-                        href={repo.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-500 hover:text-blue-300 mt-2"
-                    >
-                      View on GitHub
-                    </a>
-                  </div>
-              ))}
-            </div>
-          </main>
+                    {repo.name}
+                  </a>
+                  <p className="text-gray-400">{repo.description}</p>
+                  <a
+                      href={repo.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-300 mt-2"
+                  >
+                    View on GitHub
+                  </a>
+                </div>
+            ))}
+          </div>
+        </main>
 
-          <Footer className="z-10"/>
-        </div>
-      </RootLayout>
+        <Footer className="z-10"/>
+      </div>
+    </RootLayout>)
   );
 }

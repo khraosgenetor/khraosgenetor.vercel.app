@@ -45,7 +45,7 @@ export default function SearchBarPosts({ placeholder, posts, path }: SearchBarPr
     }, []);
 
     return (
-        <div className="flex flex-col items-center w-full">
+        (<div className="flex flex-col items-center w-full">
             <div className="flex items-center w-full max-w-md gap-2 p-2 bg-gray-800 rounded-lg mb-8">
                 <input
                     ref={inputRef}
@@ -61,7 +61,6 @@ export default function SearchBarPosts({ placeholder, posts, path }: SearchBarPr
                     Search
                 </button>
             </div>
-
             <div className="flex flex-col w-full gap-6 sm:flex-row sm:flex-wrap">
                 {filteredPosts.map((post) => (
                     <Link
@@ -75,7 +74,10 @@ export default function SearchBarPosts({ placeholder, posts, path }: SearchBarPr
                             width={64}
                             height={64}
                             className="w-16 h-16 object-cover mr-4 rounded"
-                        />
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
 
                         <div className="flex flex-col">
                             <h4 className="text-lg font-semibold text-white">{post.title}</h4>
@@ -85,6 +87,6 @@ export default function SearchBarPosts({ placeholder, posts, path }: SearchBarPr
                     </Link>
                 ))}
             </div>
-        </div>
+        </div>)
     );
 }

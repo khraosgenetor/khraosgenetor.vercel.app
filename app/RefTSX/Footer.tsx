@@ -9,7 +9,7 @@ interface FooterProps {
 
 export default function Footer({ className }: FooterProps) {
     return (
-        <footer className={`flex flex-col items-center justify-center z-10 ${className}`}>
+        (<footer className={`flex flex-col items-center justify-center z-10 ${className}`}>
             <Contact />
             <div style={{ margin: '10px 0' }} /> {/* This creates space */}
             <div className="flex gap-6 flex-wrap items-center justify-center">
@@ -25,7 +25,10 @@ export default function Footer({ className }: FooterProps) {
                         alt="GitHub icon"
                         width={35}
                         height={35}
-                    />
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
                     Source Code
                 </a>
             </div>
@@ -33,6 +36,6 @@ export default function Footer({ className }: FooterProps) {
             <div className="text-white p-4 text-center font-bold">
                 <p>&copy; {new Date().getFullYear()} KhraosGenetor. All Rights Reserved.</p>
             </div>
-        </footer>
+        </footer>)
     );
 }

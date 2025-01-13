@@ -23,7 +23,7 @@ export default function Contact() {
   ];
 
   return (
-    <footer>
+    (<footer>
       <main className="flex flex-row gap-4 row-start-2 items-center justify-center">
         {contacts.map((contact, index) => (
           <a
@@ -39,11 +39,14 @@ export default function Contact() {
               alt={contact.alt}
               width={35}
               height={35}
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             {contact.label}
           </a>
         ))}
       </main>
-    </footer>
+    </footer>)
   );
 }
