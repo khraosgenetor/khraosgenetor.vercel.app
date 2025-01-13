@@ -1,10 +1,14 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import ResultsLayout from "@/pages/layouts/ResultsLayout";
+import Header from "@/app/RefTSX/Header";
+import Footer from "@/app/RefTSX/Footer";
+import Image from "next/image";
 
-// Define the type for the result
 type Result = {
     file: string;
     content: {
+        image: string;
         title: string;
         url: string;
         content: string;
@@ -22,7 +26,6 @@ const ResultsPage = () => {
         const fetchResults = async () => {
             if (query) {
                 const keyword = Array.isArray(query) ? query[0] : query; // Take the first element if it's an array
-
                 try {
                     const res = await fetch(`/api/search?keyword=${encodeURIComponent(keyword)}`);
                     const data = await res.json(); // Parse the response as JSON
@@ -33,34 +36,48 @@ const ResultsPage = () => {
                 }
             }
         };
-
         fetchResults();
     }, [query]);
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">
-                Search Results for: {Array.isArray(query) ? query.join(', ') : query}
-            </h1>
-            {error && <p className="text-red-500">{error}</p>}
-            {results.length > 0 ? (
-                <ul>
-                    {results.map((result) => (
-                        <li key={result.file} className="mb-2">
-                            <h2 className="text-xl font-semibold">{result.content.title}</h2>
-                            <a href={result.content.url} className="text-xl font-semibold">
-                                {result.content.url}
-                            </a>
-                            <pre className="bg-gray-100 p-2 rounded">{JSON.stringify(result.content, null, 2)}</pre>
-                            <p className="text-gray-600">Keywords: {result.content.keywords.join(', ')}</p>
-                            <a href={result.content.url} className="text-blue-500 underline">View Tutorial</a>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>No results found.</p>
-            )}
-        </div>
+        <ResultsLayout>
+            <div
+                className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-black text-white">
+                <Header/>
+                <div className="container mx-auto p-4">
+                    <h1 className="text-2xl font-bold mb-4">
+                        Search Results for: {Array.isArray(query) ? query.join(', ') : query}
+                    </h1>
+                    {error && <p className="text-red-500">{error}</p>}
+                    {results.length > 0 ? (
+                        <ol className="pl-5">
+                            {results.map((result, index) => (
+                                <li key={result.file} className="mb-4 p-4 border-b border-gray-700 flex items-center">
+                                    <span style={{ fontSize: '32px', marginRight: '8px' }}>{index + 1}.</span>
+                                    <Image
+                                        src={result.content.image}
+                                        alt=""
+                                        width={60}
+                                        height={60}
+
+                                    />
+                                    <a
+                                        href={result.content.url}
+                                        className="text-blue-400 hover:underline"
+                                        style={{ marginLeft: '8px', fontSize: '32px' }} // Adjust fontSize as needed
+                                    >
+                                        {result.content.title}
+                                    </a>
+                                </li>
+                            ))}
+                        </ol>
+                    ) : (
+                        <p className="text-gray-400">No results found.</p>
+                    )}
+                </div>
+                <Footer/>
+            </div>
+        </ResultsLayout>
     );
 };
 

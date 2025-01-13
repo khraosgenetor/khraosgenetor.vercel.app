@@ -5,6 +5,7 @@ import Footer from "../RefTSX/Footer";
 import SearchBarPosts from "../RefTSX/functions/SearchBarPosts";
 import {useEffect} from "react";
 import {usePathname} from "next/navigation";
+import Background from "@/app/RefTSX/Background";
 
 type Post = {
   id: string;
@@ -42,11 +43,13 @@ export default function BlogIndex() {
 
   return (
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-black text-white">
-          <Header />
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start w-full">
+          <Background className="absolute inset-0 w-full h-full z-0" />
+          <Header className={"z-10"}/>
+
+          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10 w-full">
             <SearchBarPosts placeholder={placeholder} posts={posts} path={pathname as string} />
           </main>
-          <Footer />
+          <Footer className={"z-10"}/>
         </div>
   );
 }

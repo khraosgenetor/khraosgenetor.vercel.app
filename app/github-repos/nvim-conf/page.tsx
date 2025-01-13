@@ -3,7 +3,8 @@ import Header from "@/app/RefTSX/Header";
 import RootLayout from "@/app/layout";
 import Image from "next/image";
 import CopyCode from "../../RefTSX/functions/CopyCode";
-import dedent from "@/app/RefTSX/functions/dedent"; // Import the client component
+import dedent from "@/app/RefTSX/functions/dedent";
+import Background from "@/app/RefTSX/Background"; // Import the client component
 
 export const metadata = {
     title: "KhraosGenetor | GH/ProgrammingNotes",
@@ -31,13 +32,14 @@ export default function nvim_conf() {
         nvim
     `);
 
-
     return (
         <RootLayout>
-            <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-                <Header />
+            <div className="relative min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+                <Background className="absolute inset-0 z-0" /> {/* Ensure full coverage */}
 
-                <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+                <Header className="z-10" />
+
+                <main className="flex flex-col gap-8 items-center sm:items-start z-10">
                     <div className="flex items-center gap-4">
                         <Image
                             src="/svgs/svgrepo-nvim.svg" // Update with your profile image path
@@ -56,28 +58,28 @@ export default function nvim_conf() {
                             </a>
                         </h1>
                     </div>
-                    <p className="text-white text-center">
+                    <p className="text-white font-bold text-center">
                         IDE I use for development on my Arch machine
                     </p>
 
-                    <h1>For OSX and Linux:</h1>
+                    <h1 className="text-white">For OSX and Linux:</h1>
 
-                    <h3>If you use SSH Git (recommended), then:</h3>
-                    <CopyCode code={sshCodeSnippetUnix} language={"bash"}/>
+                    <h3 className="text-white">If you use SSH Git (recommended), then:</h3>
+                    <CopyCode code={sshCodeSnippetUnix} language={"bash"} />
 
-                    <h3>Otherwise, use HTTPS:</h3>
-                    <CopyCode code={httpsCodeSnippetUnix} language={"bash"}/>
+                    <h3 className="text-white">Otherwise, use HTTPS:</h3>
+                    <CopyCode code={httpsCodeSnippetUnix} language={"bash"} />
 
-                    <h1>For Windows:</h1>
+                    <h1 className="text-white">For Windows:</h1>
 
-                    <h3>If you use SSH Git (recommended), then:</h3>
-                    <CopyCode code={sshCodeSnippetWin} language={"bash"}/>
+                    <h3 className="text-white">If you use SSH Git (recommended), then:</h3>
+                    <CopyCode code={sshCodeSnippetWin} language={"bash"} />
 
-                    <h3>Otherwise, use HTTPS:</h3>
-                    <CopyCode code={httpsCodeSnippetWin} language={"bash"}/>
+                    <h3 className="text-white">Otherwise, use HTTPS:</h3>
+                    <CopyCode code={httpsCodeSnippetWin} language={"bash"} />
                 </main>
-
-                <Footer/>
+                <br />
+                <Footer className="z-10" />
             </div>
         </RootLayout>
     );
