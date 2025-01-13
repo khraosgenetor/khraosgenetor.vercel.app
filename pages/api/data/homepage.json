@@ -1,6 +1,28 @@
 {
-  "title": "Welcome to My Website",
-  "description": "This is the homepage of my website where you can find various resources and tutorials.",
-  "keywords": ["homepage", "welcome", "tutorials", "resources"],
-  "url": "/"
+  "title": "Home Page",
+  "description": "This is the homepage of the website.",
+  "keywords": [
+    "welcome",
+    "website",
+    "name",
+    "Khraos",
+    "Genetor",
+    "hope",
+    "good",
+    "day",
+    "here",
+    "greeting",
+    "online presence",
+    "personal",
+    "message",
+    "user experience",
+    "navigation",
+    "content",
+    "information",
+    "branding",
+    "welcome message",
+    "homepage"
+  ],
+  "url": "/",
+  "image": "/personal/pfp.png"
 }

@@ -3,7 +3,8 @@ import Header from "@/app/RefTSX/Header";
 import RootLayout from "@/app/layout";
 import Image from "next/image";
 import CopyCode from "../../RefTSX/functions/CopyCode";
-import dedent from "@/app/RefTSX/functions/dedent"; // Import the client component
+import dedent from "@/app/RefTSX/functions/dedent";
+import Background from "@/app/RefTSX/Background"; // Import the client component
 
 export const metadata = {
     title: "KhraosGenetor | GH/ProgrammingNotes",
@@ -23,13 +24,14 @@ export default function ProgrammingNotes() {
         obsidian ./
     `);
 
-
     return (
         <RootLayout>
-            <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-                <Header />
+            <div className="relative min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+                <Background className="absolute inset-0 z-0" /> {/* Ensure full coverage */}
+                <Header className="z-10" />
+                <br />
 
-                <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+                <main className="flex flex-col gap-8 items-center sm:items-start z-10">
                     <div className="flex items-center gap-4">
                         <Image
                             src="/svgs/obsidian-icon.svg" // Update with your profile image path
@@ -52,14 +54,14 @@ export default function ProgrammingNotes() {
                         All the notes I refer to for my programming journey.
                     </p>
 
-                    <h3>If you use SSH Git (recommended), then:</h3>
+                    <h3 className="text-white">If you use SSH Git (recommended), then:</h3>
                     <CopyCode code={sshCodeSnippet} language={"bash"} />
 
-                    <h3>Otherwise, use HTTPS:</h3>
+                    <h3 className="text-white">Otherwise, use HTTPS:</h3>
                     <CopyCode code={httpsCodeSnippet} language={"bash"} />
                 </main>
-
-                <Footer />
+                <br />
+                <Footer className="z-10" />
             </div>
         </RootLayout>
     );
