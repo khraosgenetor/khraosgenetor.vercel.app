@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,9 +19,7 @@ export const metadata: Metadata = {
   description: "Website for KhraosGenetor",
 };
 
-export default function RootLayout({
-                                     children,
-                                   }: Readonly<{
+export default function RootLayout({ children,}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
@@ -29,6 +28,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       <div className="heading-container">{children}</div>
+      <Analytics />
       </body>
       </html>
   );
