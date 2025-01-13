@@ -1,13 +1,7 @@
 import Image from "next/image";
-
 import RootLayout from "./layout";
-
 import Header from "./RefTSX/Header";
-
 import Footer from "./RefTSX/Footer";
-
-
-
 
 export default function Home() {
 
@@ -16,10 +10,6 @@ export default function Home() {
       <div className="relative grid grid-rows-[20px_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 
         <Header className="z-10" />
-
-
-
-
         <main
             className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10"> {/* Ensure main content is above the background */}
 
@@ -45,14 +35,9 @@ export default function Home() {
               Hope you have a good day here.
             </div>
           </div>
-
         </main>
-
-
         <Footer className="z-10"/> {/* Ensure footer is above the background */}
-
       </div>
     </RootLayout>)
   );
-
 }
