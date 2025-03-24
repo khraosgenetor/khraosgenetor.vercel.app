@@ -19,9 +19,10 @@ export default function About() {
         <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10"> {/* Ensure main content is above the background */}
           <div className="flex justify-center items-center w-full gap-8 sm:flex-row flex-col">
             <div className="flex justify-center items-center w-full text-center font-bold">
-              My name is Khraos Genetor, a boy born in India.<br />
+              My name is Aditya Abhiram, a boy born in India.<br />
               I like programming, anime, sleeping, and coffee.<br />
-              Studying in HPSB in 10th Grade, ICSE Syllabus.<br />
+              Was Studying in HPSB from grade 2 to 10, ICSE Syllabus.<br />
+              Now in 11th studying in Excellencia West Marredpally. <br />
               My favourite song is Do or Die and Rave by Dxrk.<br />
               My life started when I was born. I used to be a child.<br />
               I learnt programming trying to pirate a game called Minecraft.<br />
