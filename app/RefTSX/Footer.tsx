@@ -22,7 +22,7 @@ export default function Footer({ className }: FooterProps) {
                     <Image
                         aria-hidden
                         src="/svgs/icons8-github.svg"
-                        alt="GitHub icon"
+                        alt="GitHub Icon"
                         width={35}
                         height={35}
                         style={{
