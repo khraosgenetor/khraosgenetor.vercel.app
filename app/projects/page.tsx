@@ -12,42 +12,12 @@ export const metadata = {
 export default function GitHub() {
   const repos = [
     {
-      name: "khraosgenetor",
-      description: "The GitHub README for my profile.",
-      link: "https://github.com/khraosgenetor/khraosgenetor",
-      page: "khraosgenetor",
-      image: "/personal/pfp.png",
+      name: "taskapp-cli",
+      description: "A taskapp utilizing CLI and JSON",
+      link: "https://github.com/khraosgenetor/taskapp-cli",
+      page: "taskapp-cli",
+      image: "/personal/task-list.png",
     },
-    {
-      name: "khraosgenetor.vercel.app",
-      description: "The Source Code for this website",
-      link: "https://github.com/khraosgenetor/khraosgenetor.vercel.app",
-      page: "khraosgenetor.vercel.app",
-      image: "/personal/pfpVer.png",
-    },
-    {
-      name: "nvim-conf",
-      description: "My NeoVim configuration",
-      link: "https://github.com/khraosgenetor/nvim-conf",
-      page: "nvim-conf",
-      image: "/svgs/svgrepo-nvim.svg",
-    },
-    {
-      name: "SolutionsForClass10APC_CTA_TB_For_ICSE",
-      description: "Solutions for ICSE CTA APC textbook",
-      link: "https://github.com/khraosgenetor/SolutionsForClass10APC_CTA_TB_For_ICSE",
-      page: "SolutionsForClass10APC_CTA_TB_For_ICSE",
-      image: "/svgs/svgrepo-comp.svg",
-    },
-    {
-      name: "ProgrammingNotes",
-      description: "Notes for programming",
-      link: "https://github.com/khraosgenetor/ProgrammingNotes",
-      page: "ProgrammingNotes",
-      image: "/svgs/obsidian-icon.svg",
-    },
-
-    // Add more repositories as needed
   ];
 
   return (
@@ -76,7 +46,7 @@ export default function GitHub() {
                         }} />
                   )}
                   <a
-                      href={`/github-repos/${repo.page}`}
+                      href={`/projects/${repo.page}`}
                       rel="noopener noreferrer"
                       className="text-lg font-semibold text-white hover:text-blue-500"
                   >

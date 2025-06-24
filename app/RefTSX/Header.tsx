@@ -16,6 +16,9 @@ export default function Header({ className }: HeaderProps) {
             <Link href="/about" className={linkClass}>
                 About Me
             </Link>
+            <Link href="/projects" className={linkClass}>
+                Projects
+            </Link>
             <SearchBarIndex />
         </header>
     );
