@@ -3,7 +3,6 @@ import RootLayout from "../layout";
 import Header from "../RefTSX/Header";
 import Footer from "../RefTSX/Footer";
 
-
 export const metadata = {
   title: "KhraosGenetor | GitHub Repositories",
   description: "GH Repos",
@@ -21,53 +20,55 @@ export default function GitHub() {
   ];
 
   return (
-    (<RootLayout>
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <Header className="z-10"/>
+      <RootLayout>
+        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-background text-foreground font-[family-name:var(--font-geist-sans)]">
+          <Header className="z-10" />
 
-
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10">
-          <div className="flex flex-wrap justify-center gap-8">
-            {repos.map((repo, index) => (
-                <div
-                    key={index}
-                    className="flex flex-col items-center text-center p-3 bg-[#1b1b1b] bg-opacity-80 rounded-lg shadow-lg" // Use bg-opacity instead of opacity
-                >
-                  {repo.image && (
-                      <Image
-                        src={repo.image}
-                        alt={`${repo.name} icon`}
-                        width={100}
-                        height={100}
-                        className="rounded-full"
-                        style={{
-                          maxWidth: "100%",
-                          height: "auto"
-                        }} />
-                  )}
-                  <a
-                      href={`/projects/${repo.page}`}
-                      rel="noopener noreferrer"
-                      className="text-lg font-semibold text-white hover:text-blue-500"
+          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10 w-full">
+            <div className="flex flex-wrap justify-center gap-8 w-full">
+              {repos.map((repo, index) => (
+                  <div
+                      key={index}
+                      className="flex flex-col items-center text-center p-4 rounded-xl shadow-lg bg-background dark:bg-[#2a2a2a] text-foreground transition-all duration-300 transform hover:scale-[1.03] hover:shadow-2xl"
                   >
-                    {repo.name}
-                  </a>
-                  <p className="text-gray-400">{repo.description}</p>
-                  <a
-                      href={repo.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:text-blue-300 mt-2"
-                  >
-                    View on GitHub
-                  </a>
-                </div>
-            ))}
-          </div>
-        </main>
+                    {repo.image && (
+                        <Image
+                            src={repo.image}
+                            alt={`${repo.name} icon`}
+                            width={100}
+                            height={100}
+                            className="rounded-full"
+                            style={{
+                              maxWidth: "100%",
+                              height: "auto",
+                            }}
+                        />
+                    )}
 
-        <Footer className="z-10"/>
-      </div>
-    </RootLayout>)
+                    <a
+                        href={`/projects/${repo.page}`}
+                        className="text-lg font-semibold hover:text-blue-600 transition-colors"
+                    >
+                      {repo.name}
+                    </a>
+
+                    <p className="text-sm opacity-80 mt-1">{repo.description}</p>
+
+                    <a
+                        href={repo.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-400 mt-2 transition-colors"
+                    >
+                      View on GitHub
+                    </a>
+                  </div>
+              ))}
+            </div>
+          </main>
+
+          <Footer className="z-10" />
+        </div>
+      </RootLayout>
   );
 }

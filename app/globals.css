@@ -63,3 +63,23 @@ h3 { font-size: 1.75em; }
 h4 { font-size: 1.5em; }
 h5 { font-size: 1.25em; }
 h6 { font-size: 1em; }
+
+html.light {
+  --background: white;
+  --foreground: black;
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #000;
+}
+
+html.light body {
+  background: var(--background);
+  color: var(--foreground);
+}
+

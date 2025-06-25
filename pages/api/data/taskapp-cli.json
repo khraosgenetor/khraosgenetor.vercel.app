@@ -1,0 +1,28 @@
+{
+  "title": "TaskApp CLI",
+  "description": "A minimal command-line task manager built in C++ with SQLite for persistent storage and clean terminal output.",
+  "keywords": [
+    "task manager",
+    "CLI",
+    "command line",
+    "C++",
+    "SQLite",
+    "productivity",
+    "project",
+    "terminal",
+    "task tracker",
+    "open source",
+    "taskapp",
+    "taskapp-cli",
+    "Khraos",
+    "Genetor",
+    "developer tools",
+    "command line app",
+    "data persistence",
+    "simple UX",
+    "todo",
+    "task management"
+  ],
+  "url": "/projects/taskapp-cli",
+  "image": "/personal/task-list.png"
+}

@@ -11,10 +11,10 @@ export const metadata = {
 export default function About() {
   return (
       <RootLayout>
-        <div className="relative grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+        <div className="relative grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] text-foreground bg-background">
           <Header className="z-10" />
 
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10">
+          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start z-10 w-full">
             <div className="flex justify-center items-center w-full gap-8 sm:flex-row flex-col">
               <div className="flex justify-center items-center w-full text-center font-bold">
                 My name is Aditya Abhiram, born and raised in India.<br />
@@ -26,12 +26,12 @@ export default function About() {
                 Now, I work on a variety of projects, including CLI applications and a custom Minecraft Forge mod.<br />
               </div>
               <hr
-                  className="w-12 h-[2px] bg-gray-500 self-center"
+                  className="bg-foreground self-center"
                   style={{ width: "1px", height: "200px", display: "inline-block" }}
               />
               <div className="flex justify-center items-center">
                 <Image
-                    className="dark"
+                    className="rounded-md"
                     src="/personal/pfp.png"
                     alt="Profile Picture"
                     width={360}
@@ -39,7 +39,7 @@ export default function About() {
                     priority
                     style={{
                       maxWidth: "100%",
-                      height: "auto"
+                      height: "auto",
                     }}
                 />
               </div>
@@ -59,7 +59,7 @@ export default function About() {
                 </ol>
               </div>
               <hr
-                  className="w-12 h-[2px] bg-gray-500 self-center"
+                  className="bg-foreground self-center"
                   style={{ width: "1px", height: "200px", display: "inline-block" }}
               />
               <div className="flex justify-center items-center w-full gap-4 sm:flex-row flex-col font-bold">
@@ -82,7 +82,7 @@ export default function About() {
                 Here is a Spotify playlist I curated, featuring high-energy phonk music:
               </div>
               <hr
-                  className="w-12 h-[2px] bg-gray-500 self-center"
+                  className="bg-foreground self-center"
                   style={{ width: "1px", height: "200px", display: "inline-block" }}
               />
               <div className="flex justify-center items-center w-full gap-4 sm:flex-row flex-col">
@@ -97,8 +97,8 @@ export default function About() {
               </div>
             </div>
           </main>
-          <br />
-          <Footer className="z-10" />
+        <br />
+          <Footer className="z-12" />
         </div>
       </RootLayout>
   );
