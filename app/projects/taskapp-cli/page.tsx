@@ -35,6 +35,9 @@ export default function ProgrammingNotes() {
         
         # Delete a task with ID 3
         ./main.exe delete 3
+        
+        # Modify # Modify a task with ID 2
+        ./main.exe modify 2
     `);
 
     return (
