@@ -34,7 +34,7 @@ export default function Footer({ className }: FooterProps) {
             </div>
             <br />
             <div className="text-white p-4 text-center font-bold">
-                <p>&copy; {new Date().getFullYear()} KhraosGenetor. All Rights Reserved.</p>
+                <p>&copy; 2024 - {new Date().getFullYear()} KhraosGenetor. All Rights Reserved.</p>
             </div>
         </footer>)
     );
